@@ -10,6 +10,11 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+/**
+ * method : patronManager
+ * parameters: none
+ * purpose : Software application to allow management of Patrons.
+ */
 class patronManager {
     public static void main(String[] args) throws IOException {
 
@@ -17,10 +22,13 @@ class patronManager {
         ArrayList<String> patrons = new ArrayList<>();
 
         System.out.println("Please enter the filepath to the list of Patrons you wish to enter into the Library Management System");
-        String path = scanner.nextLine(); //I created a data.txt file within the project to easily update and add Patrons
+        String path = scanner.nextLine();
 
-
-        // Reads the text file and add's the Patrons to the ArrayList
+        /**
+         * Allows user to enter file location to batch upload Patrons.
+         * Adds Patrons to ArrayList()
+         * Displays Patrons
+         */
         StringBuilder currentPatron;
         try (FileReader fr = new FileReader(path)) {
             int c;
@@ -28,7 +36,7 @@ class patronManager {
             currentPatron = new StringBuilder();
 
 
-            //The file with Patron information will be read and the details displayed in the console
+
             while ((c = fr.read()) != -1) {
                 char ch = (char) c;
 
@@ -48,7 +56,9 @@ class patronManager {
 
             }
 
-            //Menu will be displayed with options for user to add, remove, or list patrons in the LMS system.
+            /**
+             * Provides console menu for user to select Add, Remove or List Patrons in the LMS System
+             */
             int choice = 0;
 
             while (choice != 4) {

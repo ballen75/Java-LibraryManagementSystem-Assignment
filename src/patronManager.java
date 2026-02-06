@@ -1,3 +1,11 @@
+/**
+ * Brianna Allen
+ * CEN 3024 - Software Development 1
+ * February 6, 2025
+ * patronManager.java
+ * This application will allow users to upload text files with Patron's for a LMS System. Manually add Patrons, remove Patrons, and list all patrons.
+ */
+
 import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;

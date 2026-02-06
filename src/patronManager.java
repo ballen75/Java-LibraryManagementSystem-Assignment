@@ -79,8 +79,21 @@ class patronManager {
                         String patronName = scanner.nextLine();
                         System.out.println("Please enter the Patron Address including City,State and Zip Code");
                         String patronAddress = scanner.nextLine();
-                        System.out.println("Please enter the Patron Overdue Fee Amount");
-                        String patronOverdueFee = scanner.nextLine();
+                        float patronOverdueFee;
+                        while (true) {
+                            System.out.println("Please enter the Patron Overdue Fee Amount (0 - 250):");
+                            try {
+                                patronOverdueFee = Float.parseFloat(scanner.nextLine().trim());
+                                if (patronOverdueFee >= 0 && patronOverdueFee <= 250) {
+                                    break; // valid input, exit loop
+                                } else {
+                                    System.out.println("Error: Amount must be between 0 and 250. Try again.");
+                                }
+                            } catch (NumberFormatException e) {
+                                System.out.println("Error: Invalid number format. Try again.");
+                            }
+                        }
+
 
                         String patronRecord = patronID + "-" + patronName + "-" + patronAddress + "-" + patronOverdueFee;
                         patrons.add(patronRecord);

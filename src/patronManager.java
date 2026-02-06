@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 class patronManager {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Scanner scanner = new Scanner(System.in);
         ArrayList<String> patrons = new ArrayList<>();
@@ -33,7 +33,7 @@ class patronManager {
                     currentPatron.append(ch);
                 }
             }
-            if (currentPatron.length() > 0) {
+            if (!currentPatron.isEmpty()) {
                 patrons.add(currentPatron.toString().trim());
                 System.out.println(currentPatron);
 
@@ -105,8 +105,6 @@ class patronManager {
 
             }
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

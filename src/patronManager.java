@@ -24,10 +24,10 @@ class patronManager {
         System.out.println("Please enter the filepath to the list of Patrons you wish to enter into the Library Management System");
         String path = scanner.nextLine();
 
-        /**
-         * Allows user to enter file location to batch upload Patrons.
-         * Adds Patrons to ArrayList()
-         * Displays Patrons
+        /*
+          Allows user to enter file location to batch upload Patrons.
+          Adds Patrons to ArrayList()
+          Displays Patrons
          */
         StringBuilder currentPatron;
         try (FileReader fr = new FileReader(path)) {
@@ -56,8 +56,8 @@ class patronManager {
 
             }
 
-            /**
-             * Provides console menu for user to select Add, Remove or List Patrons in the LMS System
+            /*
+              Provides console menu for user to select Add, Remove or List Patrons in the LMS System
              */
             int choice = 0;
 

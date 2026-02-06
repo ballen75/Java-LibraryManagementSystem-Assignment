@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LibraryPatronSoftware:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LibraryPatronSoftware_jar</output-path>
+    <root id="archive" name="LibraryPatronSoftware.jar">
+      <element id="module-output" name="LibraryPatronSoftware" />
+    </root>
+  </artifact>
+</component>

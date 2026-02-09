@@ -55,9 +55,9 @@ class patronManager {
 
             System.out.println("Please select an option from the menu for the Library Management System");
             System.out.println("1. Add Patron");
-            System.out.println("2. Remove Patron");
-            System.out.println("3. List Patrons");
-            System.out.println("4. Add Patrons using bulk text file upload");
+            System.out.println("2. Add Patrons using bulk text file upload");
+            System.out.println("3. Remove Patron");
+            System.out.println("4. List Patrons");
             System.out.println("5. Quit");
 
             choice = scanner.nextInt();
@@ -99,37 +99,6 @@ class patronManager {
                     break;
 
                 case 2:
-                    System.out.println("Please enter the 7 digit Patron ID");
-                    String removeID = patronIDValidation(scanner);
-                    boolean removed = false;
-
-                    for (int i = 0; i < patrons.size(); i++) {
-                        if (patrons.get(i).startsWith(removeID)) {
-                            patrons.remove(i);
-                            removed = true;
-                            System.out.println("Patron removed successfully " + removeID);
-                            break;
-                        }
-
-
-                    }
-                    if (!removed) {
-                        System.out.println("Patron ID does not exist");
-                    }
-                    break;
-
-                case 3:
-                    System.out.println("Display all current Patrons in the Library Management System");
-                    if (patrons.isEmpty()) {
-                        System.out.println("No patrons in the Library Management System");
-                    } else {
-                        for (String patron : patrons) {
-                            System.out.println(patron);
-                        }
-                    }
-                    break;
-
-                case 4:
                     System.out.println("Please enter the filepath to the list of Patrons you wish to enter into the Library Management System");
                     String path = scanner.nextLine();
 
@@ -162,6 +131,39 @@ class patronManager {
                         System.out.println("Error reading file.");
                     }
                     break;
+
+                case 3:
+                    System.out.println("Please enter the 7 digit Patron ID");
+                    String removeID = patronIDValidation(scanner);
+                    boolean removed = false;
+
+                    for (int i = 0; i < patrons.size(); i++) {
+                        if (patrons.get(i).startsWith(removeID)) {
+                            patrons.remove(i);
+                            removed = true;
+                            System.out.println("Patron removed successfully " + removeID);
+                            break;
+                        }
+
+
+                    }
+                    if (!removed) {
+                        System.out.println("Patron ID does not exist");
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("Display all current Patrons in the Library Management System");
+                    if (patrons.isEmpty()) {
+                        System.out.println("No patrons in the Library Management System");
+                    } else {
+                        for (String patron : patrons) {
+                            System.out.println(patron);
+                        }
+                    }
+                    break;
+
+
                 case 5:
                     System.out.println("Quitting the program");
                     break;
